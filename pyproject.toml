@@ -1,0 +1,28 @@
+[project]
+name = "airtasks"
+version = "0.1.0"
+description = "Generic background task handling for Air applications"
+readme = "README.md"
+authors = [
+    { name = "Ian Flath", email = "ian@kentro.tech" },
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.121.1",
+    "loguru>=0.7.0",
+]
+urls.Homepage = "https://github.com/kentro-tech/airtasks"
+urls.Issues = "https://github.com/kentro-tech/airtasks/issues"
+
+[dependency-groups]
+dev = [
+    "air>=0.40.0",
+    "pytest>=8.4.2",
+    "pytest-asyncio>=0.25.2",
+    "ruff>=0.14.3",
+    "rust-just>=1.43.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.1,<0.10.0"]
+build-backend = "uv_build"
