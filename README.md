@@ -7,7 +7,6 @@ A lightweight, database-agnostic library for managing background tasks in async 
 ## Features
 
 - 🔒 **LRULockDict**: Resource locking with automatic LRU eviction to prevent race conditions
-- 📝 **TaskLogger**: Database-agnostic task logging using callbacks
 - 🚀 **spawn_task**: Helper to spawn fire-and-forget background tasks with automatic exception logging
 - 🔐 **run_task_with_lock**: Run tasks with automatic lock management
 
