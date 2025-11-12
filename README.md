@@ -2,7 +2,7 @@
 
 **Generic background task handling for Air applications**
 
-A lightweight, database-agnostic library for managing background tasks in async Python applications, especially designed for [Air](https://github.com/feldroy/air) web apps.
+A lightweight library for managing background tasks in async Python applications, especially designed for [Air](https://github.com/feldroy/air) web apps.
 
 ## Features
 
