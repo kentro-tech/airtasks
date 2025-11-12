@@ -86,11 +86,6 @@ async def index(request: air.Request):
                     hx_target="#unsafe-results",
                     hx_swap="afterbegin",
                 ),
-                air.Button(
-                    "Reset",
-                    hx_post="/reset/unsafe",
-                    hx_swap="none",
-                ),
             ),
             air.Div(id="unsafe-results"),
             air.Div(
@@ -126,11 +121,6 @@ async def index(request: air.Request):
                     hx_post="/spawn-multiple/safe/5",
                     hx_target="#safe-results",
                     hx_swap="afterbegin",
-                ),
-                air.Button(
-                    "Reset",
-                    hx_post="/reset/safe",
-                    hx_swap="none",
                 ),
             ),
             air.Div(id="safe-results"),
@@ -241,19 +231,4 @@ async def get_counter(request: air.Request, counter_type: str):
     return air.Children(
         air.Span(str(expected), id=f"{counter_type}-expected", hx_swap_oob="true"),
         air.Span(str(actual), id=f"{counter_type}-counter", hx_swap_oob="true"),
-    )
-
-
-@app.post("/reset/{counter_type}")
-async def reset_counter(request: air.Request, counter_type: str):
-    """Reset counter and results."""
-    task_counters[counter_type] = 0
-    task_spawn_counts[counter_type] = 0
-    task_results[counter_type] = []
-
-    # Return updated counters and clear results
-    return air.Children(
-        air.Span("0", id=f"{counter_type}-expected", hx_swap_oob="true"),
-        air.Span("0", id=f"{counter_type}-counter", hx_swap_oob="true"),
-        air.Div(id=f"{counter_type}-results", hx_swap_oob="true"),
     )
