@@ -2,7 +2,6 @@
 
 This module provides reusable components for managing background tasks:
 - LRULockDict: Thread-safe lock management with LRU eviction
-- TaskLogger: Database-agnostic task progress logging with callbacks
 - spawn_task: Helper to spawn fire-and-forget background tasks
 - run_task_with_lock: Run task with automatic lock management
 
